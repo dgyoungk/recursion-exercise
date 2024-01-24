@@ -9,7 +9,7 @@
 # end
 
 # when n is odd, the right half will have more values
-# arr[0..n/2]
+# arr[0...n/2]
 
 unsorted = [1, 3, 7, 2, 4, 9, 10, 8, 12, 14, 5, 18, 11, 6]
 
