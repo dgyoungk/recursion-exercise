@@ -17,20 +17,15 @@ end
 # p fibs(8)
 
 # fibonacci sequence using recursion
-def fibs_rec(n, sequence = [])
-  if n == 0 || n == 1
-    sequence[n] = n
-    return n
-  else
-    sequence[n] = fibs_rec(n - 1) + fibs_rec(n - 2)
-    # return fibs_rec(n - 1) + fibs_rec(n - 2)
+def fibs_rec(n, sequence = (0..1).to_a)
+  if n <= sequence.length
+    return sequence[0...n]
   end
-  sequence
+  fibs_rec(n, sequence << sequence[-1] + sequence[-2])
 end
 
-p fibs_rec(4)
+p fibs_rec(10)
 
-# let's say 4...
-# fibs_rec(3) + fibs_rec(2) = fibs_rec(2) + fibs_rec(1) + fibs_rec(2) = 1 + 1 + 1
 # if the number is 0 or 1, I need to just push that into the array
 # if the number is 2 or higher, I need to put the value of fibs(number - 1) + fibs(number - 2) into the array
+# the issue is that I can get the number to put into the array, but I can't actually put it into the array...
